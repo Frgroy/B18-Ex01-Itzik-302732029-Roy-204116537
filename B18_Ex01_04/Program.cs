@@ -49,7 +49,8 @@ namespace B18_Ex01_04
 
         public static void printPalindromityOfString(string i_InputString)
         {
-            Console.WriteLine(string.Format("The string is{0}a palindrome!", 
+            Console.WriteLine(string.Format(
+                "The string is{0}a palindrome!", 
                 isStringPalindrome(i_InputString) ? " " : " not "));
         }
 
@@ -68,7 +69,8 @@ namespace B18_Ex01_04
 
         public static void printParityOfNumericString(string i_InputString)
         {
-            Console.WriteLine(string.Format("The number is {0} ", 
+            Console.WriteLine(string.Format(
+                "The number is {0} ", 
                 isNumericStringEven(i_InputString) ? "Even!" : "Odd!"));        
         }
 
@@ -89,7 +91,8 @@ namespace B18_Ex01_04
 
         public static void printNumberOfLowerCaseLetters(string i_InputString)
         {
-            Console.WriteLine(string.Format("There {0} {1} lower case letter{2}!", 
+            Console.WriteLine(string.Format(
+                "There {0} {1} lower case letter{2}!", 
                 numberOfLowerCaseLetterInLetterString(i_InputString) > 1 ? "are" : "is a", 
                 numberOfLowerCaseLetterInLetterString(i_InputString), 
                 numberOfLowerCaseLetterInLetterString(i_InputString) > 1 ? "s" : string.Empty));

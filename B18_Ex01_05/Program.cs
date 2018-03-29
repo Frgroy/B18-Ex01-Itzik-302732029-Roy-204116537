@@ -18,12 +18,15 @@ namespace B18_Ex01_05
         {
             Console.WriteLine("Please insert 6 digits natural number, and than press enter");
             string recievedNaturalNumberString = get6DigitsNaturalNumberString();
-            Console.WriteLine(string.Format("The largest digit in the recieved number is {0}",
-                getMaximumDigitFromNaturalNumberString(recievedNaturalNumberString)));
-            Console.WriteLine(string.Format("The smallest digit in the recieved number is {0}",
+            Console.WriteLine(
+            string.Format(
+            "The largest digit in the recieved number is {0}",
+            getMaximumDigitFromNaturalNumberString(recievedNaturalNumberString)));
+            Console.WriteLine(string.Format(
+                "The smallest digit in the recieved number is {0}",
                 getMinimumDigitFromNaturalNumberString(recievedNaturalNumberString)));
-            printNumberOfEvenDigitsInNaturalNumberString(recievedNaturalNumberString);
-            printNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(recievedNaturalNumberString);
+                printNumberOfEvenDigitsInNaturalNumberString(recievedNaturalNumberString);
+                printNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(recievedNaturalNumberString);
         }
 
         public static string get6DigitsNaturalNumberString()
@@ -73,7 +76,9 @@ namespace B18_Ex01_05
                     countNumberOfEvenDigitsInNaturalNumberString++;
                 }
             }
-            Console.WriteLine(string.Format("There {0} {1} even number{2}",
+
+            Console.WriteLine(string.Format(
+                "There {0} {1} even number{2}",
                 countNumberOfEvenDigitsInNaturalNumberString > 1 ? "are" : "is a",
                 countNumberOfEvenDigitsInNaturalNumberString,
                 countNumberOfEvenDigitsInNaturalNumberString > 1 ? "s" : string.Empty));
@@ -92,7 +97,8 @@ namespace B18_Ex01_05
                 }
             }
 
-            Console.WriteLine(string.Format("There {0} {1} number{2} that smaller than the first digit",
+            Console.WriteLine(string.Format(
+                "There {0} {1} number{2} that smaller than the first digit",
                 countNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString > 1 ? "are" : "is a",
                 countNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString,
                 countNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString > 1 ? "s" : string.Empty));
