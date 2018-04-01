@@ -1,7 +1,6 @@
 ﻿namespace B18_Ex01_01
 {
     using System;
-    using System.Linq;
 
     public class Program
     {
@@ -21,20 +20,8 @@
             int secondDecimalNumber = ToDecimalInt(secondBinaryNumber);
             int thirdDecimalNumber = ToDecimalInt(thirdBinaryNumber);
 
-            System.Console.WriteLine("The folowing numbers in decimal are:");
-            System.Console.WriteLine(firstDecimalNumber);
-            System.Console.WriteLine(secondDecimalNumber);
-            System.Console.WriteLine(thirdDecimalNumber);
-
-            float averageNumOfOnes = CalcAverageNumberOfOnes(GetNumOfOneDigitsInBinaryNum(firstBinaryNumber), GetNumOfOneDigitsInBinaryNum(secondBinaryNumber), GetNumOfOneDigitsInBinaryNum(thirdBinaryNumber));
-            float averageNumOfZeros = 9 - averageNumOfOnes;
-            string averagesMsg = string.Format(
-            @"The average of 1s in your binary numbers is: {0}
-The average of 0s in your binary numbers is: {1}",
-            averageNumOfOnes,
-            averageNumOfZeros);
-
-            System.Console.WriteLine(averagesMsg);
+            System.Console.WriteLine("The folowing numbers in decimal are: {0}, {1}, {2}", firstDecimalNumber, secondDecimalNumber, thirdDecimalNumber);
+            PrintAverageOfOnesAndZerosInBinaryNumber(firstBinaryNumber, secondBinaryNumber, thirdBinaryNumber);
             int numberOf2PowerNumbers = CalcNumberOf2PowerNumbers(firstBinaryNumber, secondBinaryNumber, thirdBinaryNumber);
             string TwoPowerNumsMsg = string.Format(
             @"There {0} {1} {2} that {0} power of 2",
@@ -124,6 +111,7 @@ The average of 0s in your binary numbers is: {1}",
         public static int CalcNumberOf2PowerNumbers(params string[] i_RecievedUserBinaryStrings)
         {
             int i_CountNumberOf2PowerNumbers = 0;
+
             for (int i = 0; i < i_RecievedUserBinaryStrings.Length; i++)
             {
                 if (IsTwoPower(i_RecievedUserBinaryStrings[i]))
@@ -135,9 +123,14 @@ The average of 0s in your binary numbers is: {1}",
             return i_CountNumberOf2PowerNumbers;
         }
 
-        public static float CalcAverageNumberOfOnes(params int[] i_NumberOfOnes)
+        public static void PrintAverageOfOnesAndZerosInBinaryNumber(params string[] i_RecievedUserStrings)
         {
-            return (float)i_NumberOfOnes.Average();
+            for (int i = 0; i < i_RecievedUserStrings.Length; i++ )
+            {
+                float AverageNumberOfOnesInTheIString = (float)GetNumOfOneDigitsInBinaryNum(i_RecievedUserStrings[i]) / i_RecievedUserStrings[i].Length;
+                float AverageNumberOfZerosInTheIString = 1 - AverageNumberOfOnesInTheIString;
+                Console.WriteLine(string.Format(@"Average of ones and zeros in number {0}: {1}, {2}", i + 1, AverageNumberOfOnesInTheIString, AverageNumberOfZerosInTheIString));
+            }
         }
 
         public static bool IsNumDigitsDownSeries(int i_RecievedDecimalNumber)
@@ -175,7 +168,14 @@ The average of 0s in your binary numbers is: {1}",
 
         public static float CalcAverageOfRecievedNumbers(params int[] i_RecievedDecimalNumbers)
         {
-            return (float)i_RecievedDecimalNumbers.Average();
+            int summaryOfRecievedDecimalNumbers = 0;
+
+            for (int i = 0; i < i_RecievedDecimalNumbers.Length; i++)
+            {
+                summaryOfRecievedDecimalNumbers += i_RecievedDecimalNumbers[i];
+            }
+
+            return (float)summaryOfRecievedDecimalNumbers / i_RecievedDecimalNumbers.Length;
         }
     }
 }
