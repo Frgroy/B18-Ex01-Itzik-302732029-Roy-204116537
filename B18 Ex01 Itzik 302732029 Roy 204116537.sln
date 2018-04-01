@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B18_Ex01_04", "B18_Ex01_04\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B18_Ex01_05", "B18_Ex01_05\B18_Ex01_05.csproj", "{402856D2-408B-45F5-AF12-8E995BD7F9D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4C0190B-8FD4-47B1-B9C9-964D93F28E06}"
+	ProjectSection(SolutionItems) = preProject
+		EXERCISE CHECKING REPORT DN MTA B18 Ex01 Itzik 302732029 Roy 204116537.txt = EXERCISE CHECKING REPORT DN MTA B18 Ex01 Itzik 302732029 Roy 204116537.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
