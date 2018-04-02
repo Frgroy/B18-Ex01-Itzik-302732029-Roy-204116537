@@ -12,22 +12,23 @@ namespace B18_Ex01_05
         public static void RunB18_Ex01_05()
         {
             Console.WriteLine("Please insert 6 digits natural number, and than press enter");
-            string recievedNaturalNumberString = get6DigitsNaturalNumberString();
+            string recievedNaturalNumberString = Get6DigitsNaturalNumberString();
             Console.WriteLine(
             string.Format(
             "The largest digit in the recieved number is {0}",
-            getMaximumDigitFromNaturalNumberString(recievedNaturalNumberString)));
+            GetMaximumDigitFromNaturalNumberString(recievedNaturalNumberString)));
             Console.WriteLine(string.Format(
                 "The smallest digit in the recieved number is {0}",
-                getMinimumDigitFromNaturalNumberString(recievedNaturalNumberString)));
-                printNumberOfEvenDigitsInNaturalNumberString(recievedNaturalNumberString);
-                printNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(recievedNaturalNumberString);
+                GetMinimumDigitFromNaturalNumberString(recievedNaturalNumberString)));
+                PrintNumberOfEvenDigitsInNaturalNumberString(recievedNaturalNumberString);
+                PrintNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(recievedNaturalNumberString);
         }
 
-        public static string get6DigitsNaturalNumberString()
+        public static string Get6DigitsNaturalNumberString()
         {
             int recievedNaturalNumber;
             string recievedString = Console.ReadLine();
+
             while (!int.TryParse(recievedString, out recievedNaturalNumber) || recievedString.Length != 6)
             {
                 Console.WriteLine("Illegal input! Please try again.");
@@ -37,7 +38,7 @@ namespace B18_Ex01_05
             return recievedString;
         }
 
-        public static int getMaximumDigitFromNaturalNumberString(string naturalNumber)
+        public static int GetMaximumDigitFromNaturalNumberString(string naturalNumber)
         {
             int maximumDigitInString = (int)char.GetNumericValue(naturalNumber[0]);
 
@@ -49,7 +50,7 @@ namespace B18_Ex01_05
             return maximumDigitInString;
         }
 
-        public static int getMinimumDigitFromNaturalNumberString(string naturalNumber)
+        public static int GetMinimumDigitFromNaturalNumberString(string naturalNumber)
         {
             int minimumDigitInString = (int)char.GetNumericValue(naturalNumber[0]);
 
@@ -61,9 +62,10 @@ namespace B18_Ex01_05
             return minimumDigitInString;
         }
 
-        public static void printNumberOfEvenDigitsInNaturalNumberString(string naturalNumber)
+        public static void PrintNumberOfEvenDigitsInNaturalNumberString(string naturalNumber)
         {
             int countNumberOfEvenDigitsInNaturalNumberString = 0;
+
             for (int i = 0; i < naturalNumber.Length; i++)
             {
                 if ((int)char.GetNumericValue(naturalNumber[i]) % 2 == 0)
@@ -79,7 +81,7 @@ namespace B18_Ex01_05
                 countNumberOfEvenDigitsInNaturalNumberString > 1 ? "s" : string.Empty));
         }
 
-        public static void printNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(string naturalNumber)
+        public static void PrintNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString(string naturalNumber)
         {
             int firstDigitValue = (int)char.GetNumericValue(naturalNumber, 0);
             int countNumberOfDigitsThatSmallerThanTheFirstDigitInNaturalNumberString = 0;

@@ -1,0 +1,6 @@
+c:\users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\bin\Debug\B18_Ex01_01.exe.config
+c:\users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\bin\Debug\B18_Ex01_01.exe
+c:\users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\bin\Debug\B18_Ex01_01.pdb
+c:\users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\obj\Debug\B18_Ex01_01.exe
+c:\users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\obj\Debug\B18_Ex01_01.pdb
+C:\Users\user\documents\visual studio 2015\Projects\B18 Ex01 Itzik 302732029 Roy 204116537\B18_Ex01_01\obj\Debug\B18_Ex01_01.csprojResolveAssemblyReference.cache

@@ -12,11 +12,11 @@ namespace B18_Ex01_02
 
         public static void RunB18_Ex01_02()
         {
-            StringBuilder hourGlass = buildHourGlassWithHeight(5);
+            StringBuilder hourGlass = BuildHourGlassWithHeight(5);
             Console.WriteLine(hourGlass);
         }
 
-        public static StringBuilder buildHourGlassWithHeight(int requestedHeight)
+        public static StringBuilder BuildHourGlassWithHeight(int requestedHeight)
         {
             StringBuilder hourGlass = new StringBuilder(requestedHeight);
             int remainderOfDivisionByTwo;
