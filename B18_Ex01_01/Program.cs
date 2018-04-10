@@ -20,17 +20,17 @@
             int thirdDecimalNumber = ToDecimalInt(thirdBinaryNumber);
 
             System.Console.WriteLine(
-               "The folowing numbers in decimal are: {0}, {1}, {2}", 
-                firstDecimalNumber, 
-                secondDecimalNumber, 
+               "The folowing numbers in decimal are: {0}, {1}, {2}",
+                firstDecimalNumber,
+                secondDecimalNumber,
                 thirdDecimalNumber);
             PrintAverageOfOnesAndZerosInBinaryNumber(
-                firstBinaryNumber, 
-                secondBinaryNumber, 
+                firstBinaryNumber,
+                secondBinaryNumber,
                 thirdBinaryNumber);
             int numberOf2PowerNumbers = CalcNumberOf2PowerNumbers(
-                firstBinaryNumber, 
-                secondBinaryNumber, 
+                firstBinaryNumber,
+                secondBinaryNumber,
                 thirdBinaryNumber);
             string TwoPowerNumsMsg = string.Format(
             @"There {0} {1} {2} that {0} power of 2",
@@ -39,8 +39,8 @@
             numberOf2PowerNumbers > 1 ? "numbers" : "number");
             System.Console.WriteLine(TwoPowerNumsMsg);
             int numberOfDownSeriesNumbers = CalcNumberOfDownSeriesNumbers(
-                firstDecimalNumber, 
-                secondDecimalNumber, 
+                firstDecimalNumber,
+                secondDecimalNumber,
                 thirdDecimalNumber);
             string DownSeriesNumsMsg = string.Format(
             @"There {0} {1} {2} that {3} digits {0} down series",
@@ -50,8 +50,8 @@
             numberOfDownSeriesNumbers > 1 ? "their" : "its");
             System.Console.WriteLine(DownSeriesNumsMsg);
             float averageOfRecievedNumbers = CalcAverageOfRecievedNumbers(
-                firstDecimalNumber, 
-                secondDecimalNumber, 
+                firstDecimalNumber,
+                secondDecimalNumber,
                 thirdDecimalNumber);
             string decimalNumbersAvgMsg = string.Format(
             "The average of the recieved numbers is {0}",
@@ -83,7 +83,7 @@
                     isInputContentLegal = false;
                 }
             }
-            
+
             return isInputContentLegal && i == 9 ? true : false;
         }
 
@@ -141,64 +141,64 @@
 
         public static void PrintAverageOfOnesAndZerosInBinaryNumber(params string[] i_RecievedUserStrings)
         {
-            for (int i = 0; i < i_RecievedUserStrings.Length; i++ )
+            for (int i = 0; i < i_RecievedUserStrings.Length; i++)
             {
-                float AverageNumberOfOnesInTheIString = (float)GetNumOfOneDigitsInBinaryNum(i_RecievedUserStrings[i]) / i_RecievedUserStrings[i].Length;
-                float AverageNumberOfZerosInTheIString = 1 - AverageNumberOfOnesInTheIString;
-
-                Console.WriteLine(string.Format(
-                    @"Average of ones and zeros in number {0}: {1}, {2}",
-                    i + 1, 
-                    AverageNumberOfOnesInTheIString, 
-                    AverageNumberOfZerosInTheIString));
-            }
-        }
-
-        public static bool IsNumDigitsDownSeries(int i_RecievedDecimalNumber)
-        {
-            int lastReadDigit = i_RecievedDecimalNumber % 10;
-            bool isNumDigitsDownSeries = true;
-
-            i_RecievedDecimalNumber /= 10;
-            while (i_RecievedDecimalNumber > 0)
-            {
-                if (i_RecievedDecimalNumber % 10 <= lastReadDigit)
-                {
-                    isNumDigitsDownSeries = false;
-                }
-
-                lastReadDigit = i_RecievedDecimalNumber % 10;
-                i_RecievedDecimalNumber /= 10;
-            }
-
-            return isNumDigitsDownSeries;
-        }
-
-        public static int CalcNumberOfDownSeriesNumbers(params int[] i_RecievedDecimalNumbers)
-        {
-            int countNumberOfDownSeriesNumbers = 0;
-
-            for (int i = 0; i < i_RecievedDecimalNumbers.Length; i++)
-            {
-                if (IsNumDigitsDownSeries(i_RecievedDecimalNumbers[i]))
-                {
-                    countNumberOfDownSeriesNumbers++;
-                }
-            }
-
-            return countNumberOfDownSeriesNumbers;
-        }
-
-        public static float CalcAverageOfRecievedNumbers(params int[] i_RecievedDecimalNumbers)
-        {
-            int summaryOfRecievedDecimalNumbers = 0;
-
-            for (int i = 0; i < i_RecievedDecimalNumbers.Length; i++)
-            {
-                summaryOfRecievedDecimalNumbers += i_RecievedDecimalNumbers[i];
-            }
-
-            return (float)summaryOfRecievedDecimalNumbers / i_RecievedDecimalNumbers.Length;
+                float averageNumberOfOnesInTheIString = (float)GetNumOfOneDigitsInBinaryNum(i_RecievedUserStrings[i]) / i_RecievedUserStrings[i].Length;
+                float averageNumberOfZerosInTheIString = 1 - averageNumberOfOnesInTheIString;
+                string avgMsgForIString = string.Format(
+                @"Average of ones and zeros in {0}: {1}, {2}",
+                i_RecievedUserStrings[i],
+                Math.Round(averageNumberOfOnesInTheIString, 2),
+                Math.Round(averageNumberOfZerosInTheIString, 2));
+                Console.WriteLine(avgMsgForIString);
         }
     }
+
+    public static bool IsNumDigitsDownSeries(int i_RecievedDecimalNumber)
+    {
+        int lastReadDigit = i_RecievedDecimalNumber % 10;
+        bool isNumDigitsDownSeries = true;
+
+        i_RecievedDecimalNumber /= 10;
+        while (i_RecievedDecimalNumber > 0)
+        {
+            if (i_RecievedDecimalNumber % 10 <= lastReadDigit)
+            {
+                isNumDigitsDownSeries = false;
+            }
+
+            lastReadDigit = i_RecievedDecimalNumber % 10;
+            i_RecievedDecimalNumber /= 10;
+        }
+
+        return isNumDigitsDownSeries;
+    }
+
+    public static int CalcNumberOfDownSeriesNumbers(params int[] i_RecievedDecimalNumbers)
+    {
+        int countNumberOfDownSeriesNumbers = 0;
+
+        for (int i = 0; i < i_RecievedDecimalNumbers.Length; i++)
+        {
+            if (IsNumDigitsDownSeries(i_RecievedDecimalNumbers[i]))
+            {
+                countNumberOfDownSeriesNumbers++;
+            }
+        }
+
+        return countNumberOfDownSeriesNumbers;
+    }
+
+    public static float CalcAverageOfRecievedNumbers(params int[] i_RecievedDecimalNumbers)
+    {
+        int summaryOfRecievedDecimalNumbers = 0;
+
+        for (int i = 0; i < i_RecievedDecimalNumbers.Length; i++)
+        {
+            summaryOfRecievedDecimalNumbers += i_RecievedDecimalNumbers[i];
+        }
+
+        return (float)summaryOfRecievedDecimalNumbers / i_RecievedDecimalNumbers.Length;
+    }
+}
 }
